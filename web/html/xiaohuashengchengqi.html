@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>笑话生成器</p>
+  <button>输入姓名</button>
+  <h1><button>生成笑话</button></h1>
+  </body>
+  
+  <script>
+    let count = Math.round(Math.random() * 2);
+    let jokes = ["乌龟受伤，让蜗牛去买药。过了2个小时，蜗牛还没回来。乌龟急了骂道：再不回来我就死了！这时门外传来了蜗牛的声音：你再说我不去了",
+    "有个小孩问爸爸：爸爸，为什么我们家里没有电视了？爸爸说：因为我们家里没有电了。小孩又问：那为什么我们家里没有电了？爸爸说：因为我们家里没有电使了。",
+    "小明：我要请假。 老师：理由。 小明：我下午要做手术。 老师：什么手术。 小明：人体无用副组织群体切除术。 老师：说人话。 小明：理发。 老师：一边去吧"
+    ];
+    
+    const button = document.querySelector("button");
+    button.onclick = function () {
+    let name = prompt("What is your name?");
+    jokes[0] = jokes[0].replaceAll("蜗牛", name);
+    jokes[1] = jokes[1].replaceAll("小孩", name);
+    jokes[2] = jokes[2].replaceAll("小明", name);
+    console.log("Welcome, " + name + "! We have prepared some jokes for you. Click the button to see them!");
+};
+    const button2 = document.querySelector("h1 button");
+    button2.onclick = function () {
+     console.log(jokes[count]);
+    };
+    </script>
+</html>
